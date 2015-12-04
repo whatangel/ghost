@@ -38,7 +38,7 @@ RUN buildDeps=' \
 	&& npm cache clean \
 	&& rm -rf /tmp/npm*
 
-ENV GHOST_CONTENT /var/lib/ghost
+ENV GHOST_CONTENT /var/ghost
 RUN mkdir -p "$GHOST_CONTENT" && chown -R user:user "$GHOST_CONTENT"
 VOLUME $GHOST_CONTENT
 
@@ -46,4 +46,4 @@ COPY docker-entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
 EXPOSE 2368
-CMD ["npm", "start"]
+CMD ["npm", "start","--production"]
