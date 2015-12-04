@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-if [[ "$*" == npm*start* ]]; then
+if [[ "$*" == npm*start*--production ]]; then
 	for dir in "$GHOST_SOURCE/content"/*/; do
 		targetDir="$GHOST_CONTENT/$(basename "$dir")"
 		mkdir -p "$targetDir"
