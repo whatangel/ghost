@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-if [[ "$*" == npm*start* ]]; then
+# if [[ "$*" == npm*start* ]]; then
 	for dir in "$GHOST_SOURCE/content"/*/; do
 		targetDir="$GHOST_CONTENT/$(basename "$dir")"
 		mkdir -p "$targetDir"
@@ -22,6 +22,6 @@ if [[ "$*" == npm*start* ]]; then
 	chown -R user "$GHOST_CONTENT"
 
 	set -- gosu user "$@"
-fi
+# fi
 
 # exec "$@"
