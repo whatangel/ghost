@@ -47,7 +47,5 @@ COPY start.sh /start.sh
 
 RUN chmod a+x /start.sh
 
-ENTRYPOINT ["/entrypoint.sh"]
-
 EXPOSE 2368
 CMD ["/start.sh"]
