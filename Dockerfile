@@ -45,6 +45,8 @@ VOLUME $GHOST_CONTENT
 COPY docker-entrypoint.sh /entrypoint.sh
 COPY start.sh /start.sh
 
+RUN chmod a+x /start.sh
+
 ENTRYPOINT ["/entrypoint.sh"]
 
 EXPOSE 2368
