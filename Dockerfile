@@ -46,9 +46,9 @@ COPY docker-entrypoint.sh /entrypoint.sh
 
 COPY start.sh /start.sh
 
-RUN rm -rf /usr/src/ghost/config.js
+RUN rm -rf /usr/src/ghost/config.js /usr/src/ghost/config.example.js
 
-COPY config.js /usr/src/ghost/
+COPY config.example.js /usr/src/ghost/
 
 RUN chmod a+x /start.sh
 
