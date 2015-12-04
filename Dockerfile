@@ -43,7 +43,9 @@ RUN mkdir -p "$GHOST_CONTENT" && chown -R user:user "$GHOST_CONTENT"
 VOLUME $GHOST_CONTENT
 
 COPY docker-entrypoint.sh /entrypoint.sh
+COPY start.sh /start.sh
+
 ENTRYPOINT ["/entrypoint.sh"]
 
 EXPOSE 2368
-CMD ["npm", "start","--production"]
+CMD ["/start.sh"]
