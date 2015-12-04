@@ -43,7 +43,12 @@ RUN mkdir -p "$GHOST_CONTENT" && chown -R user:user "$GHOST_CONTENT"
 VOLUME $GHOST_CONTENT
 
 COPY docker-entrypoint.sh /entrypoint.sh
+
 COPY start.sh /start.sh
+
+RUN rm -rf /usr/src/ghost/config.js
+
+COPY config.js /usr/src/ghost/
 
 RUN chmod a+x /start.sh
 
