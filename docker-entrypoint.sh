@@ -24,4 +24,4 @@ if [[ "$*" == npm*start* ]]; then
 	set -- gosu user "$@"
 fi
 
-exec "$@"
+# exec "$@"
